@@ -154,6 +154,7 @@ impl Socket {
             &self.remote_addr,
             IpNextHeaderProtocols::Tcp,
         ));
+        println!("packettttttttttttt: {:?}", tcp_packet.packet());
         let sent_size = self
             .sender
             .send_to(tcp_packet.clone(), IpAddr::V4(self.remote_addr))
